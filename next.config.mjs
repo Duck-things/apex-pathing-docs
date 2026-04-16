@@ -1,10 +1,16 @@
 import nextra from 'nextra'
-
-const withNextra = nextra({}) 
-
+ 
+// Set up Nextra with its configuration
+const withNextra = nextra({
+  // ... Add Nextra-specific options here
+})
+ 
+// Export the final Next.js config with Nextra included
 export default withNextra({
-  output: 'export',
-  basePath: '/apex-pathing-docs',
-  trailingSlash: true,
-  images: { unoptimized: true }
+  async redirects() {
+    return [
+     
+    ]
+  }
+  // ... Add regular Next.js options here
 })

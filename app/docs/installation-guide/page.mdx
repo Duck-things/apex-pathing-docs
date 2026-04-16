@@ -1,0 +1,24 @@
+import { Callout } from 'nextra/components'
+
+# Installing Apex Pathing
+
+## Prerequisites
+* **Drivetrain:** Holonomic (Swerve/Mecanum) or Tank Drive.
+* **Localization:** GoBilda Pinpoint, 3-Wheel, or 2-Wheel + IMU.
+* **Environment:** Android Studio with Java or Kotlin.
+
+<Callout type="info">
+  While Tank drive is supported, holonomic drivetrains (Swerve/Mecanum) are recommended to unlock the full potential of Apex Pathing.
+</Callout>
+
+# Getting Started
+Choose one of the two methods below to get up and running.
+
+## Option 1: Manual Installation
+Add **Jitpack** to your root `build.gradle` file:
+
+```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
