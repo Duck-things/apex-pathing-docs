@@ -50,11 +50,13 @@ export default async function RootLayout({
           pageMap={await getPageMap()}
           docsRepositoryBase="https://github.com/ApexPathing/main.git"
           footer={PageFooter()}
-          editLink={null}                    // ← add this
-          feedback={{ content: null }}       // ← add this
+          editLink={null}                    
+          feedback={{ content: null }}
+            copyPageButton={false}        
         >
           {children}
         </Layout>
+        
       </body>
     </html>
   )
