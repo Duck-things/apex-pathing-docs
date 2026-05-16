@@ -23,8 +23,8 @@ function PageNavbar() {
   return (
     <Navbar
       logo={
-        <span style={{ display: 'flex', alignItems: 'center', gap: '8px', marginLeft: '-100px' }}>
-          <img src="/logo_icon.svg" alt="Apex Pathing" width={28} height={28} style={{ marginTop: '2px' }} />
+        <span className="flex items-center gap-2">
+          <img src="/logo_icon.svg" alt="Apex Pathing" className='mr-1 size-7'/>
           <b>Apex Pathing</b>
         </span>
       }
@@ -38,7 +38,7 @@ function PageFooter() {
   return (
     <footer className='mt-auto border-t py-5 border-divider text-center text-sm text-accent-text'>
       &copy; 2026 Apex Pathing. Apex Pathing is licensed under the&nbsp;
-      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" className="hover:underline hover:text-white">GNU General Public License v3.0</a>
+      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" className="hover:underline hover:text-brand-primary-hover">GNU General Public License v3.0</a>
       . The Apex Pathing name and logo are trademarks of Apex Pathing.
     </footer>
   )
