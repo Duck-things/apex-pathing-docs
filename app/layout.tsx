@@ -23,7 +23,7 @@ function PageNavbar() {
   return (
     <Navbar
       logo={
-        <span style={{ display: 'flex', alignItems: 'center', gap: '8px', marginLeft: '-8px' }}>
+        <span style={{ display: 'flex', alignItems: 'center', gap: '8px', marginLeft: '-100px' }}>
           <img src="/logo_icon.svg" alt="Apex Pathing" width={28} height={28} style={{ marginTop: '2px' }} />
           <b>Apex Pathing</b>
         </span>
