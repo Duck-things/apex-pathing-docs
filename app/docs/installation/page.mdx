@@ -1,0 +1,31 @@
+import { Callout } from 'nextra/components'
+
+export const img_class = "rounded-xl shadow-lg my-4"
+export const img_base = "/docs_assets/installation/"
+
+# Apex Pathing Installation
+---
+
+<Callout type="info">
+    Since we are in the early stages of development, the installation process is a bit more involved than we would like.
+    OnBot Java is not currently supported, you will need to use Git and clone the project in Android Studio.
+</Callout>
+
+## Clone the project
+If you know how to clone another way, you can do that, but here are the steps to clone the project using Android Studio:
+1. Open Android Studio and select "Clone Repository" on the welcome screen.
+2. In the "URL" field, enter the URL of the Apex Pathing GitHub repository: `https://github.com/ApexPathing/main/`
+4. Choose a directory on your computer where you want to clone the project.
+5. Click the "Clone" button to start the cloning process.
+
+<img src={img_base + "clone-in-as.png"} alt="Clone project in Android Studio" className={img_class} />
+Once the cloning process is complete, Android Studio will automatically open the project.
+
+<Callout type="warning">
+    When Android Studio opens, you may see this message, press More -> Don't ask again for this project
+    <img src={img_base + "ignore-agp-upgrade.png"} alt="Disable AGP update prompt" className={img_class} />
+</Callout>
+
+## Constants Setup
+Now that you have the project cloned, head over to the [Constants Setup](/docs/setup/) page to set up your
+Constants file and get your robot ready for tuning.

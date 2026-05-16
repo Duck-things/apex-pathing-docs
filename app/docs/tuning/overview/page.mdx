@@ -1,0 +1,46 @@
+import { Callout } from 'nextra/components'
+
+# Tuning Overview
+---
+The process is very similar to that of Pedro Pathing 1.0. These tuners will be completely automated in the
+future, but for now you have to tune them manually.
+
+Each tuner follows a very similar process for tuning, so the topics below are applicable to all three tuners. You should
+check the individual tuner pages for specific instructions on how to run the OpMode and test your tuning values.
+
+
+## Panels
+Panels is a web interface that runs on your robot controller to allow for real time tuning of values. Panels is 
+already installed in the Apex Pathing project, so you don't need to do anything to get it running.
+1. Connect your device to the robot controller Wi-Fi network
+2. Open a web browser and navigate to `192.168.43.1:8001`
+3. You should now be able to select the base template and adjust the parameters as you run the tuners.
+
+<Callout type="info">
+  You have to press enter to save the values you input in Panels, the changes will be applied immediately after.
+</Callout>
+
+
+## Parameters
+When running a tuner with Panels open, you will see the following parameters that can be adjusted in real time:
+- `proportionalGain` (P): Multiplied by the current positional error in inches. This is what does the heavy lifting of
+moving the robot towards the target position. Increase it if the robot is not moving enough, decrease it if the robot is
+oscillating around the target position or overshooting.
+- `derivativeGain` (D): Multiplied by the change in error since the last update. This helps to reduce overshooting and
+oscillation. Increase it if the robot is overshooting or oscillating, decrease it if the robot is not responsive enough 
+or is too slow to reach the target position.
+- `minimumPower` (L): A constant power added to the output to help the robot overcome static friction. This value should
+be tuned first. Increase it until the robot starts to oscilate in place, then decrease it slightly until the oscillation
+stops.
+- `deadzone` (D): A range of error around the target position where no power is applied. This can help to prevent 
+tiny oscilations and allow the robot to coompletely stop.
+
+<Callout type="info">
+  The `deadzone` parameter currently doesn't get saved or changed anywhere in the constants, the default will be fine
+  for the purposes of testing.
+</Callout>
+
+## Tuning Process
+Before anything else, the heading controller should be tuned to ensure that the robot can maintain its heading while 
+tuning the lateral and axial controllers. The heading tuner should be run first, followed by the lateral and axial
+tuners in any order.

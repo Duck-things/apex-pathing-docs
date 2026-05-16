@@ -1,0 +1,37 @@
+import { Tabs, Callout, Steps } from 'nextra/components'
+
+# Lateral Tuner
+---
+
+<Callout type="warning">
+  Clear an open area before running this tuner. The robot will travel up to 2 feet (24 inches) in a single direction.
+</Callout>
+
+<Steps>
+### Run the OpMode
+Select the **Lateral Tuner** OpMode on your Driver Station.
+
+### Open Panels and tune
+Open Panels on your device and adjust the parameters as shown on the [Overview page](/docs/tuning/overview).
+
+<Callout type="info">
+  By default, the heading controller is used to keep the robot at 0 heading, it can be toggled with the maintainHeading
+  boolean in Panels.
+</Callout>
+
+### Test as you tune
+Use the controls below to test your tuning values. Adjust the parameters and test again until you are satisfied with the
+results.
+
+| Button | Action |
+|--------|--------|
+| `gamepad1.x` (hold) | Drive left 24 inches |
+| `gamepad1.b` (hold) | Drive right 6 inches |
+| `gamepad1.a` (hold) | Return to starting position |
+
+### Apply the values
+Open the constants file and update the lateral coefficients with the values obtained from tuning.
+```java
+.setStrafeCoeffs(new PDFLCoefficients(p, d, l))
+```
+</Steps>
